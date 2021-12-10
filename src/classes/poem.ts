@@ -29,7 +29,7 @@ export class Poem {
   }
 
   public static placeholder(): Poem {
-    return new Poem(1, 'en', author, title, body, tags);
+    return new Poem(id, langCode, author, title, body, tags);
   }
 
   public static logCodes(): void {
@@ -37,6 +37,8 @@ export class Poem {
   }
 }
 
+const id = 1;
+const langCode = 'en';
 const author = {
   firstName: 'Wislawa',
   lastName: 'Szymborska',
