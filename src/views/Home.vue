@@ -29,6 +29,7 @@ import { Poem } from '../classes/poem';
 
   mounted() {
     this.loadPoem();
+    Poem.logCodes();
   },
 })
 export default class Home extends Vue {}

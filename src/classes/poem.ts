@@ -1,13 +1,8 @@
-// interface PoemLike {
-//   author: string;
-//   title: string;
-//   body: string[];
-//   tags: tag[];
-// }
+import { by639_1 } from 'iso-language-codes';
 
-type LanguageCode = string; // make type in languageHelpers, enum, import ISO codes https://www.npmjs.com/package/iso-language-codes
-type Author = { firstName: string; lastName: string }; // import
-type Tag = string; // import tag
+type LanguageCode = keyof typeof by639_1;
+type Author = { firstName: string; lastName: string };
+type Tag = string; // update
 
 export class Poem {
   id: number;
@@ -35,6 +30,10 @@ export class Poem {
 
   public static placeholder(): Poem {
     return new Poem(1, 'en', author, title, body, tags);
+  }
+
+  public static logCodes(): void {
+    console.log(by639_1);
   }
 }
 

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "iso-language-codes": "^1.1.0",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0",
@@ -61,12 +62,23 @@
       "ecmaVersion": 2020,
       "sourceType": "module",
       "ecmaFeatures": {
-          "modules": true
-      }      
+        "modules": true
+      }
     },
     "rules": {
-      "quotes": [2, "single", { "avoidEscape": true }],
-      "prettier/prettier": ["error", { "singleQuote": true }]
+      "quotes": [
+        2,
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true
+        }
+      ]
     },
     "overrides": [
       {
