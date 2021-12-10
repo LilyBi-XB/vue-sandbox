@@ -1,6 +1,7 @@
 import { by639_1 } from 'iso-language-codes';
 
 const keys: string[] = Object.keys(by639_1) as const;
+// https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions
 // A 'const' assertions can only be applied to references to enum members, or string, number, boolean, array, or object literals.
 type LanguageCode = typeof keys[number];
 type Author = { firstName: string; lastName: string };
