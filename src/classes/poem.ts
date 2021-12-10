@@ -1,6 +1,8 @@
 import { by639_1 } from 'iso-language-codes';
 
-type LanguageCode = keyof typeof by639_1;
+const keys: string[] = Object.keys(by639_1) as const;
+// A 'const' assertions can only be applied to references to enum members, or string, number, boolean, array, or object literals.
+type LanguageCode = typeof keys[number];
 type Author = { firstName: string; lastName: string };
 type Tag = string; // update
 
@@ -33,7 +35,7 @@ export class Poem {
   }
 
   public static logCodes(): void {
-    console.log(by639_1);
+    console.log(Object.keys(by639_1));
   }
 }
 
