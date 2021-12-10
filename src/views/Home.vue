@@ -1,17 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="home" :style="{ height: '100vh' }">
+    <div class="h-100 w-100 p-15" :style="{ height: '100%' }">
+      <h2>{{ poem.title }}</h2>
+      <p :style="{ whiteSpace: 'pre-wrap', lineHeight: '2em' }">
+        {{ poem.body }}
+      </p>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import { Options, Vue } from 'vue-class-component';
+import { Poem } from '../classes/poem';
 
 @Options({
-  components: {
-    HelloWorld,
+  components: {},
+  data() {
+    return {
+      poem: Poem,
+    };
+  },
+
+  methods: {
+    loadPoem() {
+      this.poem = Poem.placeholder();
+    },
+  },
+
+  mounted() {
+    this.loadPoem();
   },
 })
 export default class Home extends Vue {}
